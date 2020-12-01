@@ -28,7 +28,7 @@ dbConnection.once('open', () => {
   webservice.use(cors('*'));
 
   // setup port 🔌
-  const port = process.NODE_ENV === 'production' ? 80 : 3000;
+  const port = process.env.PORT || 5000;
 
   // services 📦
   webservice.get('/', fetchGuestbook);
