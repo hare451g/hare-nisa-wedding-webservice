@@ -29,8 +29,10 @@ const postGuestbook = (req, res) => {
   guestBookEntry
     .save()
     .then((document) => {
+      const message = `Hello ${document.name} thanks for your wishes!`;
+
       res.status(201).json({
-        message: 'Created new guestbook entry',
+        message,
         data: document,
       });
     })
