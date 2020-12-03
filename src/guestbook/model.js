@@ -5,6 +5,7 @@ const Guestbook = database.model(
   database.Schema({
     name: String,
     message: String,
+    date: Date,
   })
 );
 

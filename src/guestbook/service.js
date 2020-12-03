@@ -24,7 +24,7 @@ const fetchGuestbook = (req, res) => {
 
 const postGuestbook = (req, res) => {
   const { message, name } = req.body;
-  const guestBookEntry = new Guestbook({ name, message });
+  const guestBookEntry = new Guestbook({ name, message, date: new Date() });
 
   guestBookEntry
     .save()
