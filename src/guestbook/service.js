@@ -2,6 +2,7 @@ const Guestbook = require('./model');
 
 const fetchGuestbook = (req, res) => {
   Guestbook.find()
+    .sort('-date')
     .then((document) => {
       if (!document || document.length <= 0) {
         res.status(200).json({
